@@ -1,6 +1,6 @@
 // Your code goes here
 
-// Change text color of buttons with mouseover and mouseleave
+// 1 Change text color of buttons with mouseover and mouseleave
 let btn = document.querySelectorAll('.btn');
 
 btn.forEach(el => {
@@ -8,7 +8,7 @@ btn.forEach(el => {
     el.addEventListener('mouseleave', event => event.target.style.backgroundColor = '');
 }); 
 
-// Have form appear when clicking sign up buttons
+// 2 Have form appear when clicking sign up buttons
 
 btn.forEach(el => {
     el.addEventListener('click', event => {
@@ -24,9 +24,9 @@ btn.forEach(el => {
         event.target.insertAdjacentElement('afterend', form)
         
     })
-})
+});
 
-// Scroll to bottom and do something
+// 3 Scroll to bottom and do something
 let pic = document.querySelector('.content-destination img');
 let nav = document.querySelector('.main-navigation');
 let destinationBox = document.querySelectorAll('.destination')
@@ -55,14 +55,17 @@ window.addEventListener('scroll', () => {
             el.style.boxShadow = ''
         })
     }
-})
+});
 
-// Keydown to do something
-let p = document.querySelectorAll('h2');
+// 4 Keydown to do change font colors
+let p = document.querySelectorAll('p');
+let colors = ['blue', 'red', 'green', 'orangeRed', 'purple', 'gold', 'silver', 'crimson', 'magenta', 'black'];
 
 document.addEventListener('keydown', () => {
-    p.forEach(el => el.style.fontSize = (Math.random() * (30 - 12) + 12) + 'px');
-})
+    p.forEach(el => el.style.color = colors[Math.round(Math.random() * (9 - 0) + 0)] );
+});
+
+// 5 
 
 
 
