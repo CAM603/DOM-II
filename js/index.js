@@ -1,5 +1,10 @@
 // Your code goes here
 
+// Prevent nav links from reloading page
+
+let links = document.querySelectorAll('.nav-link');
+links.forEach(el => el.addEventListener('click', event => event.preventDefault()))
+
 // 1 Change text color of buttons with mouseover and mouseleave
 let btn = document.querySelectorAll('.btn');
 
@@ -59,13 +64,79 @@ window.addEventListener('scroll', () => {
 
 // 4 Keydown to do change font colors
 let p = document.querySelectorAll('p');
-let colors = ['blue', 'red', 'green', 'orangeRed', 'purple', 'gold', 'silver', 'crimson', 'magenta', 'black'];
+let colors = ['blue', 'red', 'green', 'orangeRed', 'purple', 'gold', 'dodgerBlue', 'crimson', 'magenta', 'black'];
 
 document.addEventListener('keydown', () => {
     p.forEach(el => el.style.color = colors[Math.round(Math.random() * (9 - 0) + 0)] );
 });
 
-// 5 
+// 5 On load do something
+//window.addEventListener('load', () => alert('Are you sure you want to enter Fun Bus'));
+
+// 6 double clink nav links and do something
+let homeP = document.createElement('p');
+homeP.textContent = 'Hello, you are currently on the home page!';
+
+let aboutP = document.createElement('p');
+aboutP.textContent = 'We provide the best vacations at the best prices!';
+
+let blogP = document.createElement('p');
+blogP.textContent = 'We are currently looking for someone to write our blog. See contact info to reach us!';
+
+let contactP1 = document.createElement('p');
+let contactP2 = document.createElement('p');
+contactP1.textContent = 'Phone: (123)456-7890'
+contactP2.textContent = 'Email: funbus@myspace.com'
+
+let contact = contactP1.appendChild(contactP2)
+
+let header = document.querySelector('.intro')
+
+let homeClicks = 0;
+let aboutClicks = 0;
+let blogClicks = 0;
+let contactClicks = 0;
+
+links[0].addEventListener('dblclick', () => {
+    if (homeClicks === 0) {
+        header.prepend(homeP);
+        homeClicks += 1;
+    } else {
+        header.removeChild(homeP);
+        homeClicks = 0;
+    }
+})
+links[1].addEventListener('dblclick', () => {
+    if (aboutClicks === 0) {
+        header.prepend(aboutP);
+        aboutClicks += 1;
+    } else {
+        header.removeChild(aboutP);
+        aboutClicks = 0;
+    }
+})
+links[2].addEventListener('dblclick', () => {
+    if (blogClicks === 0) {
+        header.prepend(blogP);
+        blogClicks += 1;
+    } else {
+        header.removeChild(blogP);
+        blogClicks = 0;
+    }
+
+})
+links[3].addEventListener('dblclick', () => {
+    if (contactClicks === 0) {
+        header.prepend(contactP1);
+        contactClicks += 1;
+    } else {
+        header.removeChild(contactP1);
+        contactClicks = 0;
+    }
+})
+
+// 7 
+
 
 
 
