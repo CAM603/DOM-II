@@ -135,12 +135,46 @@ links[3].addEventListener('dblclick', () => {
     }
 })
 
-// 7 
+// 7 Mouseenter nav and nav links without propagation
+let navigation = document.querySelector('.nav')
 
+links.forEach(el => el.addEventListener('click', (event) => {
+    event.target.style.backgroundColor = 'blue';
+    event.target.style.padding = '10px';
+    event.target.style.color = 'white';
+    event.stopPropagation();
+}))
 
+navigation.addEventListener('click', (event) => {
+    event.target.style.backgroundColor = 'red';
+    event.stopPropagation();
+    
+});
 
+// 8 hide pictures when resizing window
+let pics = document.querySelectorAll('img');
 
+function hideImg() {
+    pics.forEach(el => {
+        el.style.display = 'none';
+        setTimeout(function() {
+            el.style.display = '';
+        }, 1000)
+    }) 
+};
 
+window.addEventListener('resize', hideImg);
+
+// 9 Change flex direction on click
+
+let navContainer = document.querySelector('.nav-container');
+
+navContainer.addEventListener('click', event => event.target.style.flexDirection = 'column')
+
+// 10
+let h2 = document.querySelectorAll('h2');
+
+h2.forEach(el => el.addEventListener('copy', event => event.target.textContent = 'No copying!!!'))
 
 
 
