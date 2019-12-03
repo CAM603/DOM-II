@@ -28,7 +28,7 @@ btn.forEach(el => {
         
         event.target.insertAdjacentElement('afterend', form)
         
-    })
+    }, {once: true})
 });
 
 // 3 Scroll to bottom and do something
@@ -135,7 +135,7 @@ links[3].addEventListener('dblclick', () => {
     }
 })
 
-// 7 Mouseenter nav and nav links without propagation
+// 7 Click nav and nav links without propagation
 let navigation = document.querySelector('.nav')
 
 links.forEach(el => el.addEventListener('click', (event) => {
@@ -171,7 +171,7 @@ let navContainer = document.querySelector('.nav-container');
 
 navContainer.addEventListener('click', event => event.target.style.flexDirection = 'column')
 
-// 10
+// 10 Do not allow copiers
 let h2 = document.querySelectorAll('h2');
 
 h2.forEach(el => el.addEventListener('copy', event => event.target.textContent = 'No copying!!!'))
