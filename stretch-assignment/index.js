@@ -20,20 +20,21 @@ space.addEventListener('click', (event) => {
     }
 })
 
+
 rockets.forEach(el => {
-    el.addEventListener('dblclick', (event) => {
-        let x = 0;
+    el.addEventListener('mouseover', (event) => {
         
         if (event.target.classList[0] === 'block') {
+            let x = 0 ;
             setInterval(function() {
                 x++
-                    event.target.style.position = 'relative';
-                    event.target.style.left = x+'px';
+                event.target.style.position = 'relative';
+                event.target.style.left = x+'px';
                 
             }, 100);
-            
         } else {
-            
+            console.log('Uh oh')
         }
     }, {once : true})
 })
+
