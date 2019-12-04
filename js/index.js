@@ -176,6 +176,20 @@ let h2 = document.querySelectorAll('h2');
 
 h2.forEach(el => el.addEventListener('copy', event => event.target.textContent = 'No copying!!!'))
 
+// Some GreenSock
+pics[0].classList.add('sock');
+pics[0].style.zIndex = '-1';
+pics[0].style.position = 'relative';
 
+pics[1].classList.add('sock2');
+pics[1].style.zIndex = '-1';
+pics[1].style.position = 'relative';
+pics[2].classList.add('sock3');
+pics[2].style.zIndex = '-1';
+pics[2].style.position = 'relative';
+
+gsap.to('.sock', {duration: 2, ease: "bounce.out", scale: 1.8})
+gsap.to('.sock2', {duration: 1, rotation: 360});
+gsap.to('.sock3', {duration: 2.5, ease: "power4.out", rotationY: 360});
 
 
