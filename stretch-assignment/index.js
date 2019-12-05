@@ -30,11 +30,11 @@ rockets.forEach(el => {
                 x++
                 event.target.style.position = 'relative';
                 event.target.style.left = x+'px';
-                
+                console.log(event.target.style.left)
             }, 100);
         } else {
             console.log('Uh oh')
         }
-    }, {once : true})
+    }, {once : true});
 })
-
+    
